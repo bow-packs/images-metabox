@@ -105,6 +105,3 @@
 			);
 		}
 	}
-
-	// new MultiImageMetaBoxAdmin
-?>

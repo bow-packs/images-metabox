@@ -1,0 +1,45 @@
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.img-preview{
+	position:relative;
+	display:block;
+	width:100px;
+	height:100px;
+	background:#efefef;
+	border:1px solid #FFF;
+}
+.img-preview img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+.image-entry{
+	float:right;
+	margin:10px 0 0 10px;
+	border:2px solid #ccc;
+	padding:10px;
+	background:#FFF;
+}
+.image-entry:last-child{margin-right:0;}
+.image-entry.over{
+	border: 2px dashed #000;
+}
+.get-image,.del-image{
+	margin-top:10px !important;
+	display:block !important;
+}
+.hidden { 
+	display: none !important;
+}
+.multi-image-list li {
+	display: inline-block;
+	margin: 0;
+	width: 250px;
+}
+.clearfix {
+	clear: right;
+}
