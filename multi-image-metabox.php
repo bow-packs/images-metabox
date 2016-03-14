@@ -21,8 +21,54 @@ function start_plugin()
 	new AlbumMetaBox($dir);
 	new MultiImageMetaBoxAdmin();
 }
-
 start_plugin();
+
+function get_album_images_count( $post_id = null, $feature_img = false ) 
+{
+	if( $post_id == null )
+		$post_id = get_the_id();
+
+	$multi_images = get_post_meta( $post_id, '_multiimages', true );
+	if( $feature_img ) {
+		$img = get_post_thumbnail_id( $post_id );
+		if( !empty($img) ) 
+			array_push($multi_images, $img);
+	}
+	return count(array_filter($multi_images));
+}
+
+function get_album_images_array( $post_id = null, $thumbnail = false, $feature_img = false ) 
+{
+	if( $post_id == null )
+		$post_id = get_the_id();
+
+	$image_meta = get_post_meta( $post_id, '_multiimages', true );
+	$image_array = array(); // initialize returning value
+	if( !empty($image_meta) ) {
+		$image_meta = array_filter($image_meta); // clear empty fields
+
+		if( $thumbnail ) {
+			foreach ($image_meta as $key => $img_id) {
+				$image_array[] = wp_get_attachment_image_src( $img_id, 'thumbnail' )[0];
+			}
+		} else {
+			foreach ($image_meta as $key => $img_id) {
+				$image_array[] = wp_get_attachment_image_src( $img_id, 'full' )[0];
+			}
+		}
+	}
+
+	if( $feature_img ) {
+		if( $thumbnail ) {
+			$image_array[] = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'thumbnail' )[0];
+		}
+		else {
+			$image_array[] = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' )[0];	
+		}
+	}
+
+	return $image_array;
+}
 
 // include 'multi-image-meta-admin.php';
 
