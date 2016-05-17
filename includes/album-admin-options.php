@@ -3,7 +3,7 @@
 
 		public $general_data;
 
-		function __construct() {
+		public function __construct() {
 			$this->general_data = get_option( 'multi_image_meta' );
 
 			add_action( 'admin_menu', array($this, 'multi_image_add_menu_page') );
