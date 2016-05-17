@@ -20,8 +20,8 @@
 		public function multi_enqueue_scripts() 
 		{
 			global $pagenow;
-			$current_post_type = get_current_screen();
-			$current_post_type = $current_post_type->post_type;
+			//$current_screen = get_current_screen();
+			$current_post_type = get_post_type(); //$current_screen->post_type;
 
 			$post_types  = $this->options['post-types'];
 			if ( ( $pagenow === 'post.php' || $pagenow === 'post-new.php' ) && in_array($current_post_type, $post_types) ) {
