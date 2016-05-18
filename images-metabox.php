@@ -1,7 +1,7 @@
 <?php
 /*
- * Plugin Name:       Album Of images for post
- * Plugin URI:        https://github.com/shreifelagamy/multi-image-metabox.git
+ * Plugin Name:       Images Metabox
+ * Plugin URI:        
  * Description:       Add Multi images selector for every post to create your album
  * Version:           0.1
  * Author:            Shreif Ashraf
@@ -20,8 +20,16 @@ function start_plugin()
 	$dir = plugin_dir_path( __FILE__ );
 	new AlbumMetaBox($dir);
 	new MultiImageMetaBoxAdmin();
+
+	add_action('plugins_loaded', 'mim_load_textdomain');
 }
+
 start_plugin();
+
+function mim_load_textdomain()
+{
+	load_plugin_textdomain('images-metabox', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+}
 
 function get_album_images_count( $post_id = null, $feature_img = false ) 
 {

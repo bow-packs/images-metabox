@@ -1,4 +1,4 @@
-=== Multi Image Metabox ===
+=== Images Metabox ===
 Contributors: shreif ashraf
 Tags: images, metabox, multiple, pictures, multiple post thumbnail, thumbnail, gallery
 Requires at least: 3.0
