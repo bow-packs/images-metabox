@@ -30,12 +30,12 @@
 				wp_enqueue_media();
 				wp_enqueue_script( 
 					'img-mb', 
-					'/wp-content/plugins/multi-image-metabox/assets/js/get-images.js',
+					'/wp-content/plugins/images-metabox/assets/js/get-images.js',
 					array( 'jquery','media-upload','thickbox','set-post-thumbnail' ) 
 				);
 				wp_enqueue_style( 
 					'alb-style', 
-					'/wp-content/plugins/multi-image-metabox/assets/css/style.css', 
+					'/wp-content/plugins/images-metabox/assets/css/style.css',
 					array()
 				);
 			}
