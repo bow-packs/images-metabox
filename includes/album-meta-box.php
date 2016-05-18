@@ -48,8 +48,9 @@
 			if( !empty($multi_pts) ) {
 				foreach($multi_pts as $k => $post_type ) {
 					add_meta_box( 
-						'_multiimages', 
-						'صور الألبوم', 
+						'_multiimages',
+						'Add Images',
+						//'صور الألبوم',
 						array($this, 'multi_image_template'), 
 						$post_type, 
 						'normal', 

@@ -23,8 +23,8 @@
 				</div>
 			</p>
 
-			<a href="javascript:void(0);" class="get-image button-secondary {$add_class}" data-num="multi_images[{$i}]">إضافه جديد</a>
-			<a href="javascript:void(0);" class="del-image button-secondary {$rm_class}" data-num="multi_images[{$i}]">مسح</a>
+			<a href="javascript:void(0);" class="get-image button-secondary {$add_class}" data-num="multi_images[{$i}]">Add Image</a>
+			<a href="javascript:void(0);" class="del-image button-secondary {$rm_class}" data-num="multi_images[{$i}]">Remove Image</a>
 		</div>		
 END;
 	}
